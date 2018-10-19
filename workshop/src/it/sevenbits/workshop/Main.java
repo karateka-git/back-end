@@ -19,8 +19,11 @@ public class Main {
         queue.addFirst(firstMatrix);
         queue.addLast(thirdMatrix);
         queue.addLast(secondMatrix);
-        queue.addLast(firstMatrix);
+        //queue.addLast(firstMatrix);
 
         System.out.println(queue.toString());
+        System.out.println(queue.getFirst());
+        System.out.println(queue.getLast());
+
     }
 }
