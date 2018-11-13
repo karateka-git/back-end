@@ -1,0 +1,9 @@
+.
+..
+.git
+.gitignore
+Homework3.txt
+.idea
+README.md
+А ларчик просто открывался
+Erofeev
