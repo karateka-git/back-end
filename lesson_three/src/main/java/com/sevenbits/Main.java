@@ -43,7 +43,7 @@ public class Main {
         try {
             FileReader fileReader = new FileReader(fileCreated);
             while (fileReader.hasMoreLines()) {
-                System.out.println(fileReader.readLine());
+                System.out.println(fileReader.readString());
             }
         } catch (IOException e) {
             e.getMessage();

@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class FileReaderTest {
-    FileReader fileReader;
+    private FileReader fileReader;
     @Before
     public void setUp() {
         String fileNameReadable = "Homework3.txt";

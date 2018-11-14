@@ -14,7 +14,7 @@ public class FileReader {
         this.bufferedReader = new BufferedReader(fileReader);
     }
 
-    public String readLine() throws IOException {
+    public String readString() throws IOException {
         String line;
         line = this.bufferedReader.readLine();
         this.numberLine += 1;
@@ -26,7 +26,7 @@ public class FileReader {
 
     public boolean hasMoreLines() {
         try {
-            this.bufferedReader.mark(10); // я что-то не совсем понял как это работает.
+            this.bufferedReader.mark(10);
             if (this.bufferedReader.readLine() != null) {
                 this.bufferedReader.reset();
             } else {
@@ -45,7 +45,5 @@ public class FileReader {
         } catch (IOException e) {
             e.getMessage();
         }
-
     }
-
 }

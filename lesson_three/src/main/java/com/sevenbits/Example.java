@@ -8,7 +8,7 @@ public class Example {
         String line;
         int maxSymbolLine = 0;
         while (fileReader.hasMoreLines()) {
-            line = fileReader.readLine();
+            line = fileReader.readString();
             if (maxSymbolLine < line.length()) {
                 maxSymbolLine = line.length();
             }
