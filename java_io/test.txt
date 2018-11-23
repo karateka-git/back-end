@@ -1,0 +1,6 @@
+folderInTest directory rwx /home/mrvladislav/Desktop/courses/test/folderInTest
+folderInFolder directory rwx /home/mrvladislav/Desktop/courses/test/folderInTest/folderInFolder
+  fileInFolderInFolder file rw- /home/mrvladislav/Desktop/courses/test/folderInTest/folderInFolder/fileInFolderInFolder
+ fileInFolder file rw- /home/mrvladislav/Desktop/courses/test/folderInTest/fileInFolder
+fileInTest file rw- /home/mrvladislav/Desktop/courses/test/fileInTest
+fileInTest2 file rw- /home/mrvladislav/Desktop/courses/test/fileInTest2
