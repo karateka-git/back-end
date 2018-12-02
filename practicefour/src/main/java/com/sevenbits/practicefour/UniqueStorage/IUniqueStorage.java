@@ -1,4 +1,4 @@
-package com.sevenbits.practicefour.Storage;
+package com.sevenbits.practicefour.UniqueStorage;
 
 import com.sevenbits.practicefour.Planet;
 
