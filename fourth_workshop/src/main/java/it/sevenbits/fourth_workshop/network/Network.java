@@ -1,12 +1,16 @@
 package it.sevenbits.fourth_workshop.network;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class Network implements INetwork {
     private final int maxSize;
     private ConcurrentLinkedDeque<NetworkPackage> packages = new ConcurrentLinkedDeque<NetworkPackage>();
+    final static Logger logger = LoggerFactory.getLogger(Network.class);
 
-    public Network(int maxSize) {
+    public Network(final int maxSize) {
         this.maxSize = maxSize;
     }
 
@@ -16,17 +20,17 @@ public class Network implements INetwork {
     }
 
     @Override
-    public NetworkPackage getPackage(){
-        // TODO: add debug log
+    public NetworkPackage getPackage() {
+        logger.debug("Package get");  // TODO: Add debug log
         return packages.removeFirst();
     }
 
     @Override
-    public void addPackage(String message, String type) {
-        if(packages.size() < maxSize) {
-            // TODO: add debug log
+    public void addPackage(final String message, final String type) {
+        if (packages.size() < maxSize) {
+            logger.debug("Package add");  // TODO: Add debug log
             packages.addLast(new NetworkPackage(type, message));
         }
-        // TODO: add error log
+        logger.error("error, size package > maxSize");  // TODO: Add error log
     }
 }

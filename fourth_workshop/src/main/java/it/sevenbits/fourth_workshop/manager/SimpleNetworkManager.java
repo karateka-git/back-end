@@ -8,25 +8,25 @@ public class SimpleNetworkManager implements INetworkManager {
     private long TIMEOUT = 1000;
 
     @Override
-    public void listen(INetwork network) throws NetworkManagerException {
+    public void listen(final INetwork network) throws NetworkManagerException {
         boolean isListen = false;
         StringBuilder buffer = new StringBuilder();
         int trashPackagesCount = 0;
         try {
-            while(!isInterrupted){
-                while(network.hasPackage()){
+            while (!isInterrupted) {
+                while (network.hasPackage()) {
                     NetworkPackage p = network.getPackage();
-                    if(!isListen && p.getType().equals("MESSAGE")){
+                    if (!isListen && p.getType().equals("MESSAGE")) {
                         isListen = true;
                         System.out.println("START LISTENING");
                     }
 
-                    if(isListen && p.getType().equals("MESSAGE")){
+                    if (isListen && p.getType().equals("MESSAGE")) {
                         System.out.println("MESSAGE ADDED: " + p.getMessage());
                         buffer.append(p.getMessage());
                     }
 
-                    if(isListen && p.getType().equals("TRASH")){
+                    if (isListen && p.getType().equals("TRASH")) {
                         trashPackagesCount++;
                         if (trashPackagesCount > 1) {
                             trashPackagesCount = 0;
@@ -39,7 +39,7 @@ public class SimpleNetworkManager implements INetworkManager {
                         System.out.println("TRASH IGNORED ON LISTENING");
                     }
 
-                    if(!isListen && p.getType().equals("TRASH")){
+                    if (!isListen && p.getType().equals("TRASH")) {
                         System.out.println("TRASH IGNORED");
                         continue;
                     }
@@ -47,7 +47,7 @@ public class SimpleNetworkManager implements INetworkManager {
 
                 Thread.sleep(TIMEOUT);
             }
-        } catch (InterruptedException e){
+        } catch (InterruptedException e) {
             throw new NetworkManagerException("Network manager was interrupted unexpectedly", e);
         }
     }
