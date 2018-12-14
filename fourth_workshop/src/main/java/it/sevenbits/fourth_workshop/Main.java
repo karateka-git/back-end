@@ -16,10 +16,9 @@ public class Main {
 
         PackagesGenerator packagesGenerator = new PackagesGenerator();
 //        Thread createMessagesThread = packagesGenerator.packagesFillerTaskOne(nm, network);
-        
+
         //TODO task2
         Thread createMessagesThread = packagesGenerator.packagesFillerTaskTwo(nm, network);
-
 
         createMessagesThread.start();
         nm.listen(network);

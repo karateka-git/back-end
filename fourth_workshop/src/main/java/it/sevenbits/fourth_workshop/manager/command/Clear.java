@@ -12,7 +12,6 @@ public class Clear implements INetworkManagerCommand {
 
     @Override
     public void execute() {
-        buffer.outputBuffer();
         buffer.clear();
     }
 }

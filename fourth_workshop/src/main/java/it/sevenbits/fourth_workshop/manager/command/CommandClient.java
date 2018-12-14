@@ -40,6 +40,5 @@ public class CommandClient {
         CommandInvoker commandInvoker = new CommandInvoker();
         commandInvoker.submit(states.get(new Pair<>(container.getCurrentState().toString(),
                 container.getPackage().getType())));
-//        commandInvoker.submit(states.get(new Pair<>(currentState.toString(), p.getType())));
     }
 }

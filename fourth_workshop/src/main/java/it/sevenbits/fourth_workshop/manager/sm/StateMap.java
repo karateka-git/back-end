@@ -23,7 +23,6 @@ class StateMap {
 //        states.put(new Pair<>(stubSuspicion, "TRASH"), defaultState);
 
         //TODO task 2
-//        State listenFinish = new State("LISTEN_FINISH");
         states.put(new Pair<>(defaultState, "MESSAGE_START"), listenState);
         states.put(new Pair<>(defaultState, "MESSAGE"), defaultState);
         states.put(new Pair<>(defaultState, "TRASH"), defaultState);
